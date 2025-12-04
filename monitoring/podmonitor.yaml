@@ -1,0 +1,5 @@
+metricRelabelings:
+      - sourceLabels: [__name__]
+        # Erlaubt istio, envoy und scrape interne Metriken (up, scrape_duration...)
+        regex: '^(istio_|envoy_|scrape_|up).*' 
+        action: keep
