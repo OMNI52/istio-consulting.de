@@ -3,3 +3,6 @@ metricRelabelings:
         # Erlaubt istio, envoy und scrape interne Metriken (up, scrape_duration...)
         regex: '^(istio_|envoy_|scrape_|up).*' 
         action: keep
+
+# count by (__name__) ({job="envoy-stats-monitor"})
+# {job="envoy-stats-monitor", __name__!~"istio_.*|envoy_.*|up|scrape_.*"}
